@@ -19,9 +19,6 @@
             <h1>PACE SETTERS DATABASE</h1>
           </div>
         </div>
-        <a class="download-link" href="organization-report-template.csv" download>
-          Download Spreadsheet Template
-        </a>
       </header>
 
       <main class="content-grid">
@@ -149,44 +146,59 @@
           </form>
         </section>
 
-        <aside class="info-panel">
-          <div class="info-card">
-            <h3>Spreadsheet Format</h3>
-            <p>The form matches the spreadsheet headers below:</p>
-            <ul>
-              <li>NAME</li>
-              <li>INVITE</li>
-              <li>SIGN UP</li>
-              <li>NAME OF SIGN UP</li>
-              <li>INVITE ACHIEVED</li>
-              <li>SIGN UP ACHIEVED</li>
-              <li>FORMS PURCHASED</li>
-              <li>FORMS FILLED</li>
-              <li>WEEK</li>
-              <li>DATE FOR REPORTING</li>
-              <li>FEES TO PAY ON THE ADMISSION</li>
-            </ul>
+        <section class="spreadsheet-panel" aria-labelledby="spreadsheetHeading">
+          <div class="panel-header">
+            <span class="badge">Public View</span>
+            <h2 id="spreadsheetHeading">Spreadsheet Preview</h2>
           </div>
-
-          <div class="info-card highlight">
-            <h3>Email Record</h3>
-            <p>When you submit, the data is prepared for email delivery to:</p>
-            <a href="mailto:ebenezereshunmensahanokye@gmail.com">ebenezereshunmensahanokye@gmail.com</a><br />
-            <a href="mailto:frankdebrahdarko@gmail.com">frankdebrahdarko@gmail.com</a>
+          <div class="spreadsheet-scroll" tabindex="0" aria-label="Scrollable spreadsheet preview">
+            <table class="spreadsheet-table">
+              <thead>
+                <tr>
+                  <th>NAME</th>
+                  <th>INVITE</th>
+                  <th>SIGN UP</th>
+                  <th>NAME OF SIGN UP</th>
+                  <th>INVITE ACHIEVED</th>
+                  <th>SIGN UP ACHIEVED</th>
+                  <th>FORMS PURCHASED</th>
+                  <th>FORMS FILLED</th>
+                  <th>WEEK</th>
+                  <th>DATE FOR REPORTING</th>
+                  <th>FEES TO PAY</th>
+                </tr>
+              </thead>
+              <tbody id="recordsBody"></tbody>
+            </table>
           </div>
+          <p id="recordsStatus" class="status-message" role="status"></p>
 
-          <div class="info-card share-card">
-            <h3>Organization Link & QR</h3>
-            <p>Share the organization record using this link:</p>
-            <a id="orgLink" href="#" target="_blank" rel="noopener noreferrer">Loading link...</a>
-            <div class="qr-box">
-              <img id="orgQrCode" alt="PACE SETTERS DATABASE QR code" />
+          <section id="adminLoginPanel" class="admin-panel">
+            <h3>Administrator Access</h3>
+            <form id="adminLoginForm" class="admin-login-form">
+              <label>
+                <span>ADMIN EMAIL</span>
+                <input type="email" name="ADMIN EMAIL" autocomplete="email" required />
+              </label>
+              <button type="submit" class="secondary-btn">Send Sign-In Link</button>
+            </form>
+            <p id="adminLoginStatus" class="status-message" role="status"></p>
+          </section>
+
+          <section id="adminRecordsPanel" class="admin-panel" hidden>
+            <div class="admin-toolbar">
+              <h3>Saved Records</h3>
+              <div class="admin-actions">
+                <button id="downloadRecordsButton" type="button" class="secondary-btn">Download CSV</button>
+                <button id="signOutButton" type="button" class="secondary-btn">Sign Out</button>
+              </div>
             </div>
-          </div>
-        </aside>
+          </section>
+        </section>
       </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>
 </html>
