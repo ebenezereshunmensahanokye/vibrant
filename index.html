@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PACE SETTERS DATABASE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-icon">P</div>
+          <div>
+            <p class="eyebrow">Organization Tracking</p>
+            <h1>PACE SETTERS DATABASE</h1>
+          </div>
+        </div>
+        <a class="download-link" href="organization-report-template.csv" download>
+          Download Spreadsheet Template
+        </a>
+      </header>
+
+      <main class="content-grid">
+        <section class="form-panel">
+          <div class="panel-header">
+            <span class="badge">Data Collection</span>
+            <h2>Organization Information Form</h2>
+          </div>
+
+          <form id="reportForm">
+            <div class="form-grid">
+              <label>
+                <span>NAME</span>
+                <input type="text" name="NAME" value="PACE SETTERS DATABASE" placeholder="Enter organization name" required />
+              </label>
+
+              <label>
+                <span>INVITE</span>
+                <input type="number" name="INVITE" placeholder="0" min="0" required />
+              </label>
+
+              <label>
+                <span>SIGN UP</span>
+                <input type="number" name="SIGN UP" placeholder="0" min="0" required />
+              </label>
+
+              <label>
+                <span>NAME OF SIGN UP</span>
+                <input type="text" name="NAME OF SIGN UP" placeholder="Enter name of sign up" />
+              </label>
+
+              <label>
+                <span>INVITE ACHIEVED</span>
+                <input type="number" name="INVITE ACHIEVED" placeholder="0" min="0" required />
+              </label>
+
+              <label>
+                <span>SIGN UP ACHIEVED</span>
+                <input type="number" name="SIGN UP ACHIEVED" placeholder="0" min="0" required />
+              </label>
+
+              <label>
+                <span>FORMS PURCHASED</span>
+                <input type="number" name="FORMS PURCHASED" placeholder="0" min="0" required />
+              </label>
+
+              <label>
+                <span>FORMS FILLED</span>
+                <input type="number" name="FORMS FILLED" placeholder="0" min="0" required />
+              </label>
+
+              <label>
+                <span>WEEK</span>
+                <select name="WEEK" required>
+                  <option value="Week 1">Week 1</option>
+                  <option value="Week 2">Week 2</option>
+                  <option value="Week 3">Week 3</option>
+                  <option value="Week 4">Week 4</option>
+                  <option value="Week 5">Week 5</option>
+                  <option value="Week 6">Week 6</option>
+                  <option value="Week 7">Week 7</option>
+                  <option value="Week 8">Week 8</option>
+                  <option value="Week 9">Week 9</option>
+                  <option value="Week 10">Week 10</option>
+                  <option value="Week 11">Week 11</option>
+                  <option value="Week 12">Week 12</option>
+                </select>
+              </label>
+
+              <label>
+                <span>DATE FOR REPORTING</span>
+                <input type="date" name="DATE FOR REPORTING" />
+              </label>
+
+              <label>
+                <span>FEES TO PAY ON THE ADMISSION</span>
+                <input type="number" name="FEES TO PAY" placeholder="0.00" min="0" step="0.01" />
+              </label>
+            </div>
+
+            <div class="button-row">
+              <button type="submit" class="primary-btn">Submit Record</button>
+              <button type="reset" class="secondary-btn">Clear Form</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="info-panel">
+          <div class="info-card">
+            <h3>Spreadsheet Format</h3>
+            <p>The form matches the spreadsheet headers below:</p>
+            <ul>
+              <li>NAME</li>
+              <li>INVITE</li>
+              <li>SIGN UP</li>
+              <li>NAME OF SIGN UP</li>
+              <li>INVITE ACHIEVED</li>
+              <li>SIGN UP ACHIEVED</li>
+              <li>FORMS PURCHASED</li>
+              <li>FORMS FILLED</li>
+              <li>WEEK</li>
+              <li>DATE FOR REPORTING</li>
+              <li>FEES TO PAY ON THE ADMISSION</li>
+            </ul>
+          </div>
+
+          <div class="info-card highlight">
+            <h3>Email Record</h3>
+            <p>When you submit, the data is prepared for email delivery to:</p>
+            <a href="mailto:ebenezereshunmensahanokye@gmail.com">ebenezereshunmensahanokye@gmail.com</a><br />
+            <a href="mailto:frankdebrahdarko@gmail.com">frankdebrahdarko@gmail.com</a>
+          </div>
+
+          <div class="info-card share-card">
+            <h3>Organization Link & QR</h3>
+            <p>Share the organization record using this link:</p>
+            <a id="orgLink" href="#" target="_blank" rel="noopener noreferrer">Loading link...</a>
+            <div class="qr-box">
+              <img id="orgQrCode" alt="PACE SETTERS DATABASE QR code" />
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
